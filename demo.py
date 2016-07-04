@@ -13,7 +13,7 @@ s     = rd.uniform( 5,50,500)
 ax1, aux_ax, pltinst, fig = wedge.cone(theta, radius, s,
                                        plotpos={'angle':2,
                                                 'loc':[(theta.max()+theta.min())*0.5-90, 0.]},
-                                       fig={'fignum':1, 'figsize':(4, 10)}, 
+                                       fig={'fignum':1, 'figsize':(4,5)}, 
                                        scatter={'color':'g', 'marker':'o', 'alpha':0.5})
 
 #fig.gca().annotate("A demo wedge plot")
