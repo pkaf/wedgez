@@ -1,24 +1,22 @@
 import numpy as np
 import numpy.random as rd
-
 import wedge
 reload(wedge)
+import matplotlib.pyplot as plt
 
-# Generate some fake data
-theta = rd.uniform( 110,120,500 )
-radius= rd.uniform( 0,2,500 )
-s     = rd.uniform( 5,50,500)
+theta = (8 + np.random.rand(100)*(14 - 8))*15.  # in degrees
+radius = np.random.rand(100)*2
 
 #Plot A: Simple example
-ax1, aux_ax, pltinst, fig = wedge.cone(theta, radius, s,
-                                       plotpos={'angle':2,
-                                                'loc':[(theta.max()+theta.min())*0.5-90, 0.]},
-                                       fig={'fignum':1, 'figsize':(4,5)}, 
-                                       scatter={'color':'g', 'marker':'o', 'alpha':0.5})
+
+fig = plt.figure(1, figsize=(8, 4))
+#fig.subplots_adjust(wspace=0.3, left=0.05, right=0.95)
+
+ax, aux, fig = wedge.cone(theta, radius, scale=0.2, s=3, orientation='horizontal',
+                          ralim=None, zlim=[0.01, radius.max()],
+                          hms=False, fig=fig, subnum=111)
 
 #fig.gca().annotate("A demo wedge plot")
-
-
 
 #Plot B: Example with subplots
 """
